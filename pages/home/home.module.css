@@ -1,0 +1,200 @@
+.nav--header {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  /* float: left; */
+  margin: 10px 20px;
+  /* border: 1px solid orange; */
+}
+
+/* Main navi */
+
+.main-nav {
+  /* float: right; */
+  /* max-width: 50%; */
+  list-style: none;
+  margin: 55px;
+  /* border: 1px solid blue; */
+}
+
+.main-nav li {
+  /* by default all the li elemetns are block level elements and we want to display them
+    side by side therefore change them to inline-block
+    */
+  display: inline-block;
+  /* for small margins and padding we can use px */
+  margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 8px 0;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  /* our base font size is 20 pixels and let's
+
+say you want it to be 18 pixels.
+
+But as I said before, we will never use the unit in pixels.
+
+We want it to be 18 pixels, but expressed in percentage. */
+  font-size: 90%;
+  /* we dont wan to see this border when not hovered (but it still have to exist) so give it border transparent */
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
+}
+
+.watchVideo {
+  background-color: #e67e22;
+  padding: 8px;
+}
+
+/* hover effect on active state */
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid black;
+}
+
+.main-heading {
+  /* max-width: 90%; */
+
+  margin: 0 auto;
+  background-color: #f4f4f4;
+}
+
+.brand--heading h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  font-size: 340%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.brand--subheading h3 {
+  text-align: center;
+  margin: 20px auto;
+  font-size: 100%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+  /* border: 1px solid red; */
+  /* max-width: 50%; */
+}
+
+.section-videos {
+  height: 65vh;
+  /* border: 2px solid red; */
+}
+
+.meals-showcase {
+  list-style: none;
+  height: 100%;
+  display: flex;
+}
+
+.meals-showcase li {
+  /* border: 1px solid green; */
+  background-color: #000;
+}
+
+.meal-photo {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.meal-photo img {
+  opacity: 0.7;
+  /* And the most important thing I have to do is,
+
+again, width equals 100%.
+
+And this will do exactly the same thing as before:
+
+it will assure that the image
+
+is exactly as wide as its container,
+
+which is <figure class="meal-photo"> element.
+
+And the height will then be set automatically. */
+  width: auto;
+  height: 100%;
+  /* 1.15,
+
+  and this means that the image
+  
+  will be instead of 100%,
+  
+  it will be 115% big. */
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.meal-photo img:hover {
+  opacity: 1;
+  /* 1.03 why becoz there appears to be a small white line below the image.
+  no clear explanation given by jonas but a hack */
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+.section-download {
+  background: #f4f4f4;
+  height: 30vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.section-download--phonenumber {
+  /* border: 1px solid blue; */
+  text-align: center;
+  margin: 20px;
+}
+
+.section-download--storeLinks {
+  /* border: 1px solid grey; */
+  text-align: center;
+  margin: 20px;
+}
+
+.btnWrapper {
+  display: flex;
+}
+
+.number {
+  /* display: block; */
+  margin: 2em auto;
+  padding: 0.5em 0.25em;
+  border: none;
+  /* border-radius: 0.2em; */
+  font-size: 1.5em;
+  text-align: center;
+  box-shadow: 0 0 1em 0.25em rgba(0, 0, 0, 0.2);
+}
+
+.send {
+  /* display: block; */
+  /* margin: 2em auto; */
+  padding: 0.5em 0.25em;
+  border: none;
+  /* border-radius: 0.2em; */
+  font-size: 1.5em;
+  text-align: center;
+  box-shadow: 0 0 1em 0.25em rgba(0, 0, 0, 0.2);
+  background-color: orange;
+  color: whitesmoke;
+}
