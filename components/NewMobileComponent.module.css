@@ -24,7 +24,7 @@
 
 @media (min-width: 480px) {
   .playerWrapper {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
   }
 }
 

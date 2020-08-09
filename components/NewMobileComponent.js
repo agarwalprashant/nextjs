@@ -4,8 +4,9 @@ import styles from './NewMobileComponent.module.css';
 
 import MobileActionsFooter from './MobileActionsFooter';
 import MobileActionsSideBar from './MobileActionsSideBar';
+import UserDetails from './userDetails';
 
-import { useSpring, animated } from 'react-spring';
+// import { useSpring, animated } from 'react-spring';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -26,12 +27,12 @@ import {
 const isBrowser = () => typeof window !== 'undefined';
 
 export default ({ width, height, video, sound, user }) => {
-  const props = useSpring({
-    config: { duration: 4000 },
-    // opacity: 0,
-    from: { opacity: 1 },
-    to: { opacity: 0 },
-  });
+  // const props = useSpring({
+  //   config: { duration: 4000 },
+  //   // opacity: 0,
+  //   from: { opacity: 1 },
+  //   to: { opacity: 0 },
+  // });
   const [playing, setPlaying] = React.useState(false);
   const [isDesktop, setIsDesktop] = React.useState(false);
 
@@ -46,15 +47,17 @@ export default ({ width, height, video, sound, user }) => {
 
   // console.log('inside mobileComponent width', width);
   // console.log('inside mobileComponent height', height);
+
+  console.log('inside mobile component video', video);
   return (
     <>
-      <animated.div style={props}>
+      {/* <animated.div style={props}>
         <div className={styles.splash}>
           <div className={styles.typewriter}>
             <h1>Mitron TV</h1>
           </div>
         </div>
-      </animated.div>
+      </animated.div> */}
       <div
         onContextMenu={(e) => e.preventDefault()}
         className={styles.playerWrapper}
@@ -73,9 +76,14 @@ export default ({ width, height, video, sound, user }) => {
           onEnded={videoEnded}
           // light={true}
         />
-
+        <UserDetails user={user} sound={sound} />
         <MobileActionsFooter />
-        <MobileActionsSideBar playAudio={playAudio} playing={playing} />
+        <MobileActionsSideBar
+          playAudio={playAudio}
+          playing={playing}
+          video={video}
+          user={user}
+        />
       </div>
     </>
   );

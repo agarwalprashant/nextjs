@@ -1,0 +1,17 @@
+.whatsApp--logo {
+  height: 45px;
+  width: auto;
+}
+
+.share--icons__container {
+  display: flex;
+  justify-content: space-evenly;
+  /* border: 2px solid red; */
+  margin-top: 25px;
+}
+
+.copy {
+  /* border: 2px solid blue; */
+  padding: 5px;
+  text-align: center;
+}

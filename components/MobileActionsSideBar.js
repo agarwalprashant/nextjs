@@ -15,6 +15,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import chat from "./icons/chat.svg";
 // import heart from "./icons/heart.svg";
 
+import ReactModalBox from './react-modal-box';
+
 import SvgComponent from './svgComponent';
 
 import {
@@ -32,6 +34,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 export default class OtherActions2 extends Component {
+  triggerChildModalOpen = () => {
+    console.log(' share button Click');
+    this.refs.childModal.handleOpenModal();
+  };
   render() {
     return (
       <Fragment>
@@ -48,35 +54,80 @@ export default class OtherActions2 extends Component {
               d="M409.45 715.48a32.792 32.792 0 01-7.82 3.88c-3.41 1.2-6.96 1.81-10.47 1.81-3.52 0-7.07-.61-10.48-1.78-2.76-.94-5.43-2.28-7.91-3.98-74.39-44.48-170.7-110.11-243.03-189.51C54.16 442.93 4.43 344.95 29.66 239.15l.06.02c9.96-44.05 29.79-79.51 56.02-106.15 25.27-25.65 56.36-42.98 90.22-51.84 33.38-8.73 69.42-9.16 105.11-1.14 37.28 8.38 74.22 25.99 107.34 52.97 18.25-19.19 42.37-33.81 68.56-43.77 39-14.83 83.41-19.49 119.39-13.44 43.22 7.23 79.29 23.88 108.28 49.22 29.3 25.61 50.89 59.81 64.83 101.83l.47 1.23c30.18 111.07-17.88 210.65-93.61 294.56C583.81 603 485.81 668.7 409.46 715.48zM165.57 493.29C232 566.2 320.67 627.41 391.06 669.95c72.38-44.69 162.81-106.13 229.24-179.74 65.67-72.77 107.75-157.66 82.81-249.43l.06-.01c-11.18-33.1-27.95-59.75-50.38-79.35-22.12-19.33-50.23-32.14-84.4-37.85-28.04-4.71-63.12-.9-94.36 10.98-26.29 10-49.24 25.55-61.5 46.17l-15.81 26.61-22.01-21.68c-31.25-30.79-67.67-50.18-104.25-58.4-28.15-6.33-56.39-6.04-82.36.75-25.5 6.67-48.88 19.7-67.85 38.95-20.19 20.5-35.54 48.23-43.38 83.1v.28c-20.76 87.07 22.91 170.74 88.7 242.96z"
             />
           </SvgComponent> */}
-          {/* <div className={styles.some}> */}
-          {/* <div className={styles.dot}> */}
-          {/* <div className={styles.some1}> */}
-          <img
-            src="/images/follow.png"
-            alt="React Logo"
-            width="40"
-            height="40"
-            className="svg"
-          />
-          {/* </div> */}
-          {/* </div> */}
-          {/* </div> */}
+          <div
+            className={styles.profilePicWrapper}
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href =
+                'https://play.google.com/store/apps/details?id=com.mitron.tv&hl=en_IN';
+            }}
+          >
+            <img
+              src={this.props.user.profilePic}
+              alt="React Logo"
+              className={styles.profilepic}
+            />
+            <div
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href =
+                  'https://play.google.com/store/apps/details?id=com.mitron.tv&hl=en_IN';
+              }}
+            >
+              <img
+                src="/images/follow.png"
+                alt="React Logo"
+                width="20"
+                height="20"
+                className={styles.followBtn}
+              />
+            </div>
+          </div>
 
-          <img
-            src="/images/heart.png"
-            alt="React Logo"
-            width="30"
-            height="30"
-            className="svg"
-          />
-
-          <img
-            src="/images/comments.png"
-            alt="React Logo"
-            width="30"
-            height="30"
-            className="svg"
-          />
+          <div
+            style={{ textAlign: 'center' }}
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href =
+                'https://play.google.com/store/apps/details?id=com.mitron.tv&hl=en_IN';
+            }}
+          >
+            <img
+              src="/images/heart.png"
+              alt="React Logo"
+              width="30"
+              height="30"
+              className="svg"
+            />
+            <span className={styles.likesCount}>
+              {this.props.video.likeCount}
+            </span>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <img
+              src="/images/comments.png"
+              alt="React Logo"
+              width="30"
+              height="30"
+              className="svg"
+            />
+            <span className={styles.likesCount}>
+              {this.props.video.commentCount}
+            </span>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <img
+              src="/images/share.png"
+              alt="React Logo"
+              width="30"
+              height="30"
+              className="svg"
+              onClick={this.triggerChildModalOpen}
+            />
+            <span className={styles.likesCount}>
+              {this.props.video.shareCount}
+            </span>
+          </div>
 
           {/* <SvgComponent viewBox="0 0 900 900">
             <path
@@ -91,26 +142,29 @@ export default class OtherActions2 extends Component {
             {this.props.playing ? (
               <FontAwesomeIcon
                 icon={faPause}
-                size="2x"
+                // size="1.5x"
                 color="#ff4f00"
                 style={{ marginTop: '2%' }}
                 // onClick={() => this.setState({ playing: !this.state.playing })}
                 onClick={this.props.playAudio}
+                className={styles.playIcon}
                 //   spin
               />
             ) : (
               <FontAwesomeIcon
                 icon={faPlay}
-                size="2x"
+                // size="1.5x"
                 color="#ff4f00"
                 style={{ marginTop: '2%' }}
                 //   spin
                 // onClick={() => this.setState({ playing: !this.state.playing })}
                 onClick={this.props.playAudio}
+                className={styles.playIcon}
               />
             )}
             {/* </button> */}
           </div>
+          <ReactModalBox ref="childModal" videoId={this.props.video.videoId} />
         </div>
       </Fragment>
     );

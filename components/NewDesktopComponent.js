@@ -5,7 +5,7 @@ import SvgComponent from './svgComponent';
 import Link from 'next/link';
 import Head from 'next/head';
 
-import { useSpring, animated } from 'react-spring';
+// import { useSpring, animated } from 'react-spring';
 
 // import styles from "./NewDesktopComponent.module.css";
 
@@ -48,11 +48,11 @@ const isBrowser = () => typeof window !== 'undefined';
 SwiperCore.use([EffectCoverflow, Navigation, Pagination, Controller, Thumbs]);
 
 export default ({ width, sound, video, user }) => {
-  const props = useSpring({
-    config: { duration: 5000 },
-    opacity: 0,
-    from: { opacity: 1 },
-  });
+  // const props = useSpring({
+  //   config: { duration: 5000 },
+  //   opacity: 0,
+  //   from: { opacity: 1 },
+  // });
 
   const [height, setHeight] = React.useState(0);
   const [playing, setPlaying] = React.useState(false);
@@ -68,11 +68,7 @@ export default ({ width, sound, video, user }) => {
 
   console.log('inside desktopComponent width', width);
   console.log('inside desktopComponent height', height);
-  console.log(
-    'video',
-    video,
-    `https://cdn.mitron.tv/upload/video/${video.videoUrl}.mp4`
-  );
+  console.log('video', video, `${video.videoUrl}`);
 
   return (
     <>
@@ -140,7 +136,7 @@ export default ({ width, sound, video, user }) => {
                     <FontAwesomeIcon
                       icon={faMusic}
                       size="2x"
-                      color="orange"
+                      color="#ff"
                     />{' '}
                     {sound.name}
                   </div>
@@ -160,13 +156,13 @@ export default ({ width, sound, video, user }) => {
                 <FontAwesomeIcon icon={faSmile} size="1x" color="orange" />{' '}
                 <FontAwesomeIcon icon={faSmile} size="1x" color="orange" />{' '}
               </div>
-              <div className={styles.comments}>
+              {/* <div className={styles.comments}>
                 <Link href="/gallery/gallery">
                   <a>Go to Video Gallery</a>
                 </Link>
-              </div>
+              </div> */}
             </main>
-            <div>
+            <div style={{ marginBottom: '15px' }}>
               {user.videoLikeCount
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}

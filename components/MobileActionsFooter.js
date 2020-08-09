@@ -10,7 +10,14 @@ export default class actions1 extends Component {
   render() {
     return (
       <Fragment>
-        <div className={styles.footerBox}>
+        <div
+          className={styles.footerBox}
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href =
+              'https://play.google.com/store/apps/details?id=com.mitron.tv&hl=en_IN';
+          }}
+        >
           <img
             src="/images/home.png"
             alt="React Logo"
@@ -31,8 +38,8 @@ export default class actions1 extends Component {
           <img
             src="/images/Search.png"
             alt="React Logo"
-            width="25"
-            height="25"
+            width="20"
+            height="20"
             style={{ marginTop: '2%' }}
             className="svg"
           />
@@ -44,7 +51,7 @@ export default class actions1 extends Component {
             />
           </SvgComponent> */}
 
-          <SvgComponent viewBox="0 0 4000 4000">
+          <SvgComponent viewBox="0 0 3500 3500">
             <path
               fill="#ff4f00"
               d="M1937.87 1628.86l-473.69-403.64s-156.73 57.34-156.73 187.31v1399.1c0 298.17-271.41 569.58-638.39 623.09C298.26 3488.24.09 3308.57.09 3010.4c0-298.17 298.17-581.04 665.15-630.74 252.3-34.41 363.16 42.05 363.16 42.05V781.78c0-191.14 152.9-386.09 340.21-439.61l569.26 378.59 824.98-707.42c187.31-53.52 340.22 57.34 344.04 244.65v2289.78c0 298.17-301.99 573.4-668.97 619.27-370.8 45.87-668.97-141.44-668.97-439.61s298.17-573.41 672.79-623.09c248.47-30.59 389.92 49.69 389.92 49.69V1030.17c0-137.61-152.91-87.93-152.91-87.93l-740.89 686.6z"
@@ -60,8 +67,8 @@ export default class actions1 extends Component {
           <img
             src="/images/chat.png"
             alt="React Logo"
-            width="25"
-            height="25"
+            width="20"
+            height="20"
             style={{ marginTop: '2%' }}
             className="svg"
           />
@@ -75,8 +82,8 @@ export default class actions1 extends Component {
           <img
             src="/images/profile.png"
             alt="React Logo"
-            width="25"
-            height="25"
+            width="20"
+            height="20"
             style={{ marginTop: '2%' }}
             className="svg"
           />

@@ -1,0 +1,19 @@
+.userDetailsWrapper {
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  /* background-color: red; */
+  position: absolute;
+  top: 80%;
+  left: 10%;
+  height: 10%;
+  width: 50%;
+  /* display: flex;
+  justify-content: space-around; */
+  /* border: 1px solid red; */
+  color: #fff;
+
+  /* z-index: 100; */
+}
+
+.soundName {
+  font-size: small;
+}
