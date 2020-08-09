@@ -65,12 +65,13 @@ export default ({ width, height, video, sound, user }) => {
       >
         <ReactPlayer
           className={styles.reactPlayer}
-          url={`${video.videoUrl}`}
+          url={video.videoUrl}
           // url={
           //   'https://mitrontv.s3.ap-south-1.amazonaws.com/upload/video/39.mp4'
           // }
           width="100%"
           height="100%"
+          style={{ objectFit: 'none' }}
           playing={playing}
           position="absolute"
           onEnded={videoEnded}

@@ -11,7 +11,8 @@ export default class MyDocument extends Document {
           <meta name="description" content="Indian Short Video App" />
           <meta charSet="utf-8" />
           <meta name="robots" content="noindex,nofollow" />
-          <meta name="viewport" content="width=device-width" />
+          {/* <meta name="viewport" content="width=device-width" /> */}
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           {/* But we can add any link like cdn link for NProgress css file */}
           <link
             rel="stylesheet"

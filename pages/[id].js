@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import ReactPlayer from 'react-player';
-import styles from './player/player.module.css';
 // import { useRouter } from 'next/router';
 
 import NewMobileComponent from '../components/NewMobileComponent';

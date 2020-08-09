@@ -100,7 +100,7 @@ export default ({ width, sound, video, user }) => {
             <ReactPlayer
               className={styles.reactPlayer}
               // ref="player"
-              url={`${video.videoUrl}`}
+              url={video.videoUrl}
               width="100%"
               height="100%"
               playing={playing}
