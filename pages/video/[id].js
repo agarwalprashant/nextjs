@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 import ReactPlayer from 'react-player';
 // import { useRouter } from 'next/router';
 
-import NewMobileComponent from '../components/NewMobileComponent';
-import NewDesktopComponent from '../components/NewDesktopComponent';
+import NewMobileComponent from '../../components/NewMobileComponent';
+import NewDesktopComponent from '../../components/NewDesktopComponent';
 
 import axios from 'axios';
 
