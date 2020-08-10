@@ -129,7 +129,7 @@ Player.getInitialProps = async ({ query }) => {
 
   var config = {
     method: 'post',
-    url: 'http://52.66.237.36:8183/v1/fetchMetadata',
+    url: `${process.env.fetchURL}/v1/fetchMetadata`,
     headers: {
       os: 'desktop',
       osVersion: '9.1',

@@ -5,7 +5,8 @@ module.exports = (phase, { defaultConfig }) => {
     return {
       /* development only config options here */
       env: {
-        baseURL: 'http://fa10a13c07af.ngrok.io',
+        baseURL: 'http://39197183bf83.ngrok.io',
+        fetchURL: 'http://52.66.237.36:8183',
       },
     };
   }
@@ -14,7 +15,7 @@ module.exports = (phase, { defaultConfig }) => {
     /* config options for all phases except development here */
     env: {
       baseURL: 'https://api.mitron.tv',
-      // baseURL: 'http://52.66.237.36:8183',
+      fetchURL: 'http://52.66.237.36:8183',
     },
   };
 };

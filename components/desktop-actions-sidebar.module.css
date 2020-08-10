@@ -12,12 +12,38 @@
   border: 2px soild blue;
 }
 
-/* .playPause {
-  z-index: 100;
+.playPauseWrapper {
+  margin-left: 5px;
+}
+
+.playIcon {
+  font-size: 25px;
+}
+
+.likesCount {
+  /* color: #000; */
+  color: #ff4f00;
+  font-size: small;
+  margin-left: 4px;
+}
+
+.profilePicWrapper {
+  height: 50px;
+  width: 50px;
+  margin-left: -10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.profilepic {
+  border-radius: 50%;
+}
+
+.followBtn {
   position: absolute;
-  top: 65%;
-  right: 3%;
-} */
+  top: 35px;
+  left: 15px;
+}
 
 /* svg {
       fill: "red";

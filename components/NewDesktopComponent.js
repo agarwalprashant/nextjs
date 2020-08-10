@@ -1,13 +1,13 @@
 import React, { Component, Fragment, useState } from 'react';
 import ReactPlayer from 'react-player';
-import styles from './DesktopComponent.module.css';
+import styles from './NewDesktopComponent.module.css';
 import SvgComponent from './svgComponent';
 import Link from 'next/link';
 import Head from 'next/head';
+import Header from './Header';
+import UserDetails from './userDetails';
 
 // import { useSpring, animated } from 'react-spring';
-
-// import styles from "./NewDesktopComponent.module.css";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -26,26 +26,14 @@ import DesktopActionsSidebar from './DesktopActionsSidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
-  faSearch,
-  faHome,
-  faPlay,
-  faPause,
-  faComment,
-  faHeart,
-  faRing,
-  faShare,
-  faRetweet,
-  faCompactDisc,
-  faPlusCircle,
   faMusic,
   faSmile,
   faSmileWink,
-  faSadCry,
 } from '@fortawesome/free-solid-svg-icons';
 
 const isBrowser = () => typeof window !== 'undefined';
 
-SwiperCore.use([EffectCoverflow, Navigation, Pagination, Controller, Thumbs]);
+// SwiperCore.use([EffectCoverflow, Navigation, Pagination, Controller, Thumbs]);
 
 export default ({ width, sound, video, user }) => {
   // const props = useSpring({
@@ -66,6 +54,10 @@ export default ({ width, sound, video, user }) => {
     setPlaying(!playing);
   };
 
+  const videoEnded = () => {
+    setPlaying(!playing);
+  };
+
   console.log('inside desktopComponent width', width);
   console.log('inside desktopComponent height', height);
   console.log('video', video, `${video.videoUrl}`);
@@ -78,9 +70,10 @@ export default ({ width, sound, video, user }) => {
       {/* <animated.div style={props}>
         <div className={styles.splash}>Welcome to MitronTV</div>
       </animated.div> */}
-      <div className={styles.typewriter}>
+      {/* <div className={styles.typewriter}>
         <h1>Mitron TV</h1>
-      </div>
+      </div> */}
+      <Header />
 
       <div
         onContextMenu={(e) => e.preventDefault()}
@@ -104,6 +97,7 @@ export default ({ width, sound, video, user }) => {
               width="100%"
               height="100%"
               playing={playing}
+              onEnded={videoEnded}
 
               // loop={true}
               // volume={1}
@@ -111,8 +105,14 @@ export default ({ width, sound, video, user }) => {
               //   muted={true}
               //   light={true}
             />
+            <UserDetails user={user} sound={sound} />
             <DesktopActionsFooter />
-            <DesktopActionsSidebar playAudio={playAudio} playing={playing} />
+            <DesktopActionsSidebar
+              playAudio={playAudio}
+              playing={playing}
+              video={video}
+              user={user}
+            />
           </div>
 
           <div className={styles.sideBar}>
@@ -172,13 +172,7 @@ export default ({ width, sound, video, user }) => {
               <header className={styles.scanQR}>
                 Scan the QR code to download and watch more videos on MitronTV
               </header>
-              <main
-                style={{
-                  //   border: "2px solid red",
-                  display: 'flex',
-                  justifyContent: 'space-evenly',
-                }}
-              >
+              <main className={styles.socialWrapper}>
                 <div className={styles.btnWrapper}>
                   <div style={{ margin: 10 }}>
                     <a

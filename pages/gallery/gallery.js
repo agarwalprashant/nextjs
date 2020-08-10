@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Head from "next/head";
-import Layout from "../../components/layout";
-import styles from "./gallery.module.css";
+import Link from 'next/link';
+import Head from 'next/head';
+import Layout from '../../components/layout';
+import styles from './gallery.module.css';
 
-import ReactPlayer from "react-player";
+import ReactPlayer from 'react-player';
 
 export default ({}) => {
   const urls = [
@@ -32,7 +32,7 @@ export default ({}) => {
       </Head>
       <div>
         <div className={styles.wrapper}>
-          <h1>Mitron Video gallery</h1>
+          <h1>Mitron Video gallery(under development)</h1>
 
           <div className={styles.imgArea}>
             {urls.map((url) => {
@@ -41,8 +41,8 @@ export default ({}) => {
                   <ReactPlayer
                     className={styles.singleImg}
                     url={url}
-                    width={"20vw"}
-                    height={"70vh"}
+                    width={'20vw'}
+                    height={'70vh'}
                     controls={true}
                     playing={false}
                     // loop={true}

@@ -164,7 +164,7 @@ export default class OtherActions2 extends Component {
             )}
             {/* </button> */}
           </div>
-          <ReactModalBox ref="childModal" videoId={this.props.video.videoId} />
+          <ReactModalBox ref="childModal" videoId={this.props.video.id} />
         </div>
       </Fragment>
     );
