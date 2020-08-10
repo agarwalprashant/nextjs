@@ -50,7 +50,7 @@ export default ({ width, sound, video, user }) => {
   });
 
   const playAudio = () => {
-    console.log('playAudio function called', playing);
+    // console.log('playAudio function called', playing);
     setPlaying(!playing);
   };
 
@@ -58,9 +58,9 @@ export default ({ width, sound, video, user }) => {
     setPlaying(!playing);
   };
 
-  console.log('inside desktopComponent width', width);
-  console.log('inside desktopComponent height', height);
-  console.log('video', video, `${video.videoUrl}`);
+  // console.log('inside desktopComponent width', width);
+  // console.log('inside desktopComponent height', height);
+  // console.log('video', video, `${video.videoUrl}`);
 
   return (
     <>

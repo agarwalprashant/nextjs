@@ -7,7 +7,7 @@ import NewDesktopComponent from '../components/NewDesktopComponent';
 
 import axios from 'axios';
 
-const Player = ({ sound, video, user }) => {
+const Player = ({ sound, video, user, msg, url }) => {
   // Declare a new state variable with the "useState" Hook
   const [width, setWidth] = React.useState();
   const [height, setHeight] = React.useState();
@@ -80,7 +80,7 @@ const Player = ({ sound, video, user }) => {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
   // console.log('inside mobileComponent width', width);
-  console.log('inside mobileComponent height', height);
+  // console.log('inside mobileComponent height', height);
   return width < breakpoint ? (
     <NewMobileComponent
       width={width}
@@ -88,6 +88,8 @@ const Player = ({ sound, video, user }) => {
       sound={sound}
       video={video}
       user={user}
+      msg={msg}
+      url={url}
     />
   ) : (
     <NewDesktopComponent
@@ -119,7 +121,7 @@ const Player = ({ sound, video, user }) => {
 };
 
 Player.getInitialProps = async ({ query }) => {
-  console.log('context', query.id);
+  // console.log('context', query.id);
   var data = JSON.stringify({
     videoId: query.id,
     user: true,
@@ -140,9 +142,25 @@ Player.getInitialProps = async ({ query }) => {
     data: data,
   };
 
-  const result = await axios(config);
+  var shareConfig = {
+    method: 'post',
+    // url: 'http://52.66.237.36:8183/v1/shareUrl',
+    url: `${process.env.shareURL}`,
+    method: 'post',
+    headers: {
+      os: 'desktop',
+      osVersion: '9.1',
+      appVersion: '1.2.26',
+      deviceId: 'testDevice1',
+      'Content-Type': 'application/json',
+    },
+    data: JSON.stringify({ type: 'video', id: 'x4zLKXK10s44RWwYirO' }),
+  };
 
-  // console.log('result', result.data);
+  const result = await axios(config);
+  const shareResult = await axios(shareConfig);
+
+  console.log('share result', shareResult.data);
   // console.log('sound', result.data.sound);
   // const json = await res.json()
   // return { stars: json.stargazers_count }
@@ -150,6 +168,8 @@ Player.getInitialProps = async ({ query }) => {
     sound: result.data.sound,
     video: result.data.video,
     user: result.data.user,
+    msg: shareResult.data.msg,
+    url: shareResult.data.url,
   };
 };
 

@@ -3,7 +3,7 @@
 // import { Link } from "react-router-dom";
 
 function goToPlayStore() {
-  console.log('hi there');
+  // console.log('hi there');
 }
 function SvgComponent(props) {
   // console.log(props);

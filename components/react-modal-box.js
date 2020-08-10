@@ -35,8 +35,10 @@ export default class ReactModalBox extends Component {
 
   Copytext = () => {
     this.setState({ copied: true });
+    console.log(`${this.props.msg} ${this.props.url}`);
     copy(
-      `Checkout this video on MitronTV - ${process.env.baseURL}/${this.props.videoId}`
+      // `Checkout this video on MitronTV - ${process.env.baseURL}/${this.props.videoId}`
+      `${this.props.msg} ${this.props.url}`
     );
   };
 
@@ -180,7 +182,8 @@ export default class ReactModalBox extends Component {
           </div>
           <div style={{ textAlign: 'center' }}>
             <a
-              href={`whatsapp://send?text=Checkout this video on MitronTV - ${process.env.baseURL}/${this.props.videoId}`}
+              // href={`whatsapp://send?text=Checkout this video on MitronTV - ${process.env.baseURL}/${this.props.videoId}`}
+              href={`whatsapp://send?text=${this.props.msg} ${this.props.url}`}
               data-action="share/whatsapp/share"
             >
               <img

@@ -26,7 +26,7 @@ import {
 
 const isBrowser = () => typeof window !== 'undefined';
 
-export default ({ width, height, video, sound, user }) => {
+export default ({ width, height, video, sound, user, msg, url }) => {
   // const props = useSpring({
   //   config: { duration: 4000 },
   //   // opacity: 0,
@@ -37,7 +37,7 @@ export default ({ width, height, video, sound, user }) => {
   const [isDesktop, setIsDesktop] = React.useState(false);
 
   const playAudio = () => {
-    console.log('playAudio function called', playing);
+    // console.log('playAudio function called', playing);
     setPlaying(!playing);
   };
 
@@ -84,6 +84,8 @@ export default ({ width, height, video, sound, user }) => {
           playing={playing}
           video={video}
           user={user}
+          msg={msg}
+          url={url}
         />
       </div>
     </>
