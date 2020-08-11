@@ -57,7 +57,7 @@ export default class ReactModalBox extends Component {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(255, 255, 255, 0.75)',
+            backgroundColor: 'rgba(255, 255, 255, 0.30)',
           },
           content: {
             position: 'absolute',
@@ -72,6 +72,7 @@ export default class ReactModalBox extends Component {
             borderRadius: '4px',
             outline: 'none',
             padding: '20px',
+            boxShadow: '3px -1px 9px 0px rgba(0,0,0,0.75) ',
           },
           /* Object indicating styles to be used for the modal.
      It has two keys, `overlay` and `content`.

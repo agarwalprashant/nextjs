@@ -1,8 +1,8 @@
 .footerBox {
-  background-color: rgba(0, 0, 0, 0.2);
+  /* background-color: rgba(0, 0, 0, 0.2); */
   position: absolute;
-  top: 90%;
-  height: 10%;
+  bottom: 1%;
+  height: 7%;
   width: 100%;
   display: flex;
   justify-content: space-around;

@@ -14,7 +14,7 @@
 
 .some {
   display: relative;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 40px;
   height: 40px;
 }

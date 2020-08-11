@@ -12,6 +12,7 @@ const Home = () => {
         <link href="/vendors/css/grid.css" rel="stylesheet" />
       </Head>
       <header>
+        {/* <header onContextMenu={(e) => e.preventDefault()}> */}
         <nav>
           <div className={styles[`nav--header`]}>
             <img
@@ -31,7 +32,8 @@ const Home = () => {
                 <a href="#cities">Trending</a>
               </li>
               <li className={styles.watchVideo}>
-                <Link href="/home/home">
+                {/* <Link href="/home/home"> */}
+                <Link href="#">
                   <a target="_blank">Watch Video Now</a>
                 </Link>
               </li>

@@ -78,7 +78,7 @@ export default ({ width, sound, video, user }) => {
       <div
         onContextMenu={(e) => e.preventDefault()}
         className={styles.playerWrapper}
-        style={{ width: width, height: height }}
+        style={{ width: width }}
       >
         <div className={styles.wrapper}>
           <div className={styles.onlyPlayerWrapper}>
@@ -117,7 +117,12 @@ export default ({ width, sound, video, user }) => {
 
           <div className={styles.sideBar}>
             <header className={styles.header}>
-              <img src={user.profilePic} className={styles.profileImg} />
+              <img
+                src={user.profilePic}
+                className={styles.profileImg}
+                height="50px"
+                width="50px"
+              />
               <div>
                 <div className={styles.name}>
                   <div>
@@ -135,18 +140,16 @@ export default ({ width, sound, video, user }) => {
                     {' '}
                     <FontAwesomeIcon
                       icon={faMusic}
-                      size="2x"
-                      color="#ff"
+                      size="1x"
+                      color="#ff4f00"
                     />{' '}
                     {sound.name}
                   </div>
                 </div>
               </div>
-
-              {/* <button>...</button> */}
             </header>
             <main className={styles.commentBox}>
-              <div className={styles.hashTags}>
+              {/* <div className={styles.hashTags}>
                 {`#Dance #Mitron #feelIt #Bloopers `}
                 <FontAwesomeIcon
                   icon={faSmileWink}
@@ -155,53 +158,48 @@ export default ({ width, sound, video, user }) => {
                 />{' '}
                 <FontAwesomeIcon icon={faSmile} size="1x" color="orange" />{' '}
                 <FontAwesomeIcon icon={faSmile} size="1x" color="orange" />{' '}
-              </div>
+              </div> */}
               {/* <div className={styles.comments}>
                 <Link href="/gallery/gallery">
                   <a>Go to Video Gallery</a>
                 </Link>
               </div> */}
             </main>
-            <div style={{ marginBottom: '15px' }}>
-              {user.videoLikeCount
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
-              Likes
+            <div className={styles.metricsWrapper}>
+              <div style={{ marginBottom: '15px', marginRight: '5px' }}>
+                {video.likeCount
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
+                Likes
+              </div>
+              &#8226;
+              <div style={{ marginBottom: '15px', marginLeft: '5px' }}>
+                {video.commentCount
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
+                Comments
+              </div>
             </div>
             <footer>
               <header className={styles.scanQR}>
-                Scan the QR code to download and watch more videos on MitronTV
+                Click On The Button Below To Download The MitronTV App Now
               </header>
               <main className={styles.socialWrapper}>
-                <div className={styles.btnWrapper}>
-                  <div style={{ margin: 10 }}>
-                    <a
-                      target="_blank"
-                      href="https://play.google.com/store/apps/details?id=com.mitron.tv"
-                    >
-                      <img
-                        src="/images/googleStore.png"
-                        width="140px"
-                        height="50px"
-                      />
-                    </a>
-                  </div>
-                  <div style={{ margin: 10 }}>
-                    <a
-                      target="_blank"
-                      href="https://play.google.com/store/apps/details?id=com.mitron.tv"
-                    >
-                      <img
-                        src="/images/appStore.png"
-                        width="150px"
-                        height="50px"
-                      />
-                    </a>
-                  </div>
+                {/* <div className={styles.btnWrapper}> */}
+                <div style={{ margin: 10 }}>
+                  <a
+                    target="_blank"
+                    href="https://play.google.com/store/apps/details?id=com.mitron.tv"
+                  >
+                    <img
+                      src="/images/googleStore.png"
+                      width="140px"
+                      height="50px"
+                    />
+                  </a>
                 </div>
-                <div>
-                  <img src="/images/QR2.jpg" width="100px" height="100px" />
-                </div>
+
+                {/* </div> */}
               </main>
             </footer>
           </div>

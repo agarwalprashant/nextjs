@@ -35,7 +35,7 @@ import {
 
 export default class OtherActions2 extends Component {
   triggerChildModalOpen = () => {
-    console.log(' share button Click');
+    // console.log(' share button Click');
     this.refs.childModal.handleOpenModal();
   };
   render() {
@@ -66,6 +66,8 @@ export default class OtherActions2 extends Component {
               src={this.props.user.profilePic}
               alt="React Logo"
               className={styles.profilepic}
+              height="50"
+              width="50"
             />
             <div
               onClick={(e) => {

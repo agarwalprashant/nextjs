@@ -35,9 +35,10 @@ export default class OtherActions2 extends Component {
           >
             <img
               src={this.props.user.profilePic}
-              // src="/images/bhavika1.jpg"
               alt="React Logo"
               className={styles.profilepic}
+              height="50px"
+              width="50px"
             />
             <div
               onClick={(e) => {

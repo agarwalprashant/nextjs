@@ -12,7 +12,7 @@ const Player = ({ sound, video, user, msg, url }) => {
   const [width, setWidth] = React.useState();
   const [height, setHeight] = React.useState();
   //   const [playing, setPlaying] = React.useState(false);
-  const breakpoint = 720;
+  const breakpoint = 820;
 
   //state/hook for fetching data
   // const [sound, setSound] = React.useState({});
@@ -160,7 +160,7 @@ Player.getInitialProps = async ({ query }) => {
   const result = await axios(config);
   const shareResult = await axios(shareConfig);
 
-  console.log('share result', shareResult.data);
+  // console.log('share result', shareResult.data);
   // console.log('sound', result.data.sound);
   // const json = await res.json()
   // return { stars: json.stargazers_count }
